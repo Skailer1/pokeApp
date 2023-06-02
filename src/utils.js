@@ -42,9 +42,8 @@ export const getPokeTypes = async() =>
     const url =`https://pokeapi.co/api/v2/type/1`
     const response = await fetch (url);
     const dataPokeTypes = await response.json();
- const pokeType = dataPokeTypes.pokemon;
-  // console.log(pokeType);
-    return pokeType;
+
+    return dataPokeTypes;
 
    
 

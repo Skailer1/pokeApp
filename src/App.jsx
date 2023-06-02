@@ -3,8 +3,7 @@ import { Card } from './Card';
 import {getDitto, getPokemons, getPokemonById, getPokeTypes} from "./utils"
 import { PokemonTypes } from './components/PokemonTypes';
 import { pokeTypes } from './dataTypes';
-
-
+import { PokemonList } from './components/PokemonList';
 
 export const App = () => {
 
@@ -34,12 +33,13 @@ export const App = () => {
   const handleOnChangePokemon = () => {
       setPokemonById(inputRef.current.value);
       getPokemon();
+      
   }
   
 
 
   return (
-   <div>
+   <div className='col'>
 <div className="mb-3 mx-4" >
   <label  className="form-label">Search Pokemon</label>
   <input 
@@ -55,10 +55,16 @@ export const App = () => {
 </div>
 
 
-   <Card infoPokemon={pokemon} />
+   <Card image={pokemon?.sprites?.front_default} 
+   id={pokemon.id}
+   type={pokemon.name}
+   name={pokemon.name}/>
 
 <div>
   <PokemonTypes/>
+</div>
+<div>
+  <PokemonList/>
 </div>
 <div>
 {/* {

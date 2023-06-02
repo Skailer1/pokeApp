@@ -1,21 +1,17 @@
-export const Card = (props) => {
-// console.log(props);
-let pokemon = props;
+export const Card = ({id,name,image,type}) => {
+
   return (
-<div className="row mx-2 ">
-  {/* <div className="col-sm-4 mb-3 mb-sm-0">
+<div className="col-sm-3 mb-3 mb-sm-3 mx-4">
 
-  </div> */}
-  <div className="col-sm-4 mb-3 mb-sm-0">
- <div className="card"  >
-  <img src={pokemon?.infoPokemon?.sprites?.front_default} className="card-img" />
+  <div className="card">
+ <div className="row no-gutter"  >
+  <img src={image} className="card-img" alt={name} />
   <div className="card-body">
-    <p className="card-text">id: {pokemon.infoPokemon.id}</p>
-    <p className="card-text">name: {pokemon.infoPokemon.name}</p>
+    <p className="card-text">id: {id}</p>
+    <p className="card-text">name: {name}</p>
+    <small> Type: {type}</small>
   </div>
-  {/* <div className="col-sm-4 mb-3 mb-sm-0">
 
-</div> */}
 </div> 
 </div> 
 </div> 
