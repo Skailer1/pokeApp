@@ -8,7 +8,7 @@ export const pokeTypes = [
     {
         'id': 'type2',
         'option':'Fighting', 
-        'value':'', 
+        'value':'2', 
        
     },
     {

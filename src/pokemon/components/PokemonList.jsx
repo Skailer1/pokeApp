@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react'
-import {Card} from '../Card'
+import {Card} from './Card'
 
-export const PokemonList = () => {
+export const PokemonList = ({typeId}) => {
     const [allPokemons, setAllPokemons] = useState([])
 
-    const url ='https://pokeapi.co/api/v2/type/12'
+    
 
     // url con id por parametro para que cambie segun el dropdown.
-   // const url =`https://pokeapi.co/api/v2/type/${typeId}`
+    const url =`https://pokeapi.co/api/v2/type/${typeId}`
   
     const getAllPokemons = async ()=> {
       const res = await fetch(url);
@@ -23,27 +23,26 @@ export const PokemonList = () => {
           setAllPokemons(pokemons => [...pokemons, data]);
         });
       }
+      if(typeId != ''){
       createPokemonObject(data.pokemon);
-      console.log();
+      }
     }
   
     useEffect(() => {
+     
       getAllPokemons()
-      
     
-    }, [])
+    
+    }, [typeId])
 
   return (
     <>
-    <h4 className='mx-4'>Pokemon Type: </h4>
+    <h4 className='mx-4'>Pokemon Type: {typeId} </h4>
     <div className="row rows-cols-1 row-cols-md-5 g-3">
     
       {allPokemons.map((pokemon, index) => 
       <Card 
-      image={pokemon?.sprites?.front_default} 
-      id={pokemon.id}
-      name={pokemon.name}
-      type={pokemon.types[0].type.name}
+      pokemon={pokemon}
       key={index}/>
         )}
       </div>
