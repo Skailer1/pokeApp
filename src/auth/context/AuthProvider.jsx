@@ -31,7 +31,7 @@ export const AuthProvider = ({children}) => {
 
   const logout = ()=>{
     localStorage.removeItem('user');
-
+    localStorage.clear();
     const action = {type: types.logout  };
 
     dispatch(action);

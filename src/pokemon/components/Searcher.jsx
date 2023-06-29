@@ -96,15 +96,17 @@ export const Searcher = () => {
       </div>
 
       <div className="d-flex justify-content-center mt-2 mx-4 mb-2">
-        { pokemon !== null && loading && <PokemonSpinner />}
+        {pokemon !== null && loading && <PokemonSpinner />}
       </div>
 
       {error &&
-        <div className="alert alert-danger animate__animated animate__fadeIn mx-4">
+        <div className=" alert alert-danger animate__animated animate__fadeIn mx-4">
           {error} <b>{pokemonId}</b>
         </div>}
-      {pokemon !== null && pokemonId && !error && <PokemonCard pokemon={pokemon} key={pokemon.id} />}
+      <div className='d-flex justify-content-center'>
+        {pokemon !== null && !loading && !error && <PokemonCard pokemon={pokemon} key={pokemon.id} />}
+      </div>
     </div>
-    
+
   )
 }
