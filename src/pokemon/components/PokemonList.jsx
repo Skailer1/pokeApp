@@ -64,7 +64,7 @@ export const PokemonList = () => {
 
   return (
     <>
-      <h4 className='mx-4'>Pokemons</h4>
+      <h4 className='mt-2'>Pokemons</h4>
       <div className="row rows-cols-1 row-cols-md-5 g-3">
         {allPokemons.map((pokemon) =>
           <PokemonCard

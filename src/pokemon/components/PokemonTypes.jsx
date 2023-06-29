@@ -38,7 +38,7 @@ export const PokemonTypes = () => {
   return (
     <>
 
-      <Dropdown className='mx-4 mt-2   '>
+      <Dropdown className='mt-2'>
         <Dropdown.Toggle variant="primary" id="dropdown-basic">
           Choose Pokemon Type
         </Dropdown.Toggle>

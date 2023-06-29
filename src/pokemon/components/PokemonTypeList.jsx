@@ -67,9 +67,9 @@ export const PokemonTypeList = ({ pokemonTypeId, pokemonTypeValue }) => {
 
   return (
     <>
-      {pokemonTypeValue && <h4 className='mx-4'>Pokemon Type: {pokemonTypeValue}  </h4>}
+      {pokemonTypeValue && <h4 className='mt-2'>Pokemon Type: {pokemonTypeValue}  </h4>}
 
-      <div className="d-flex justify-content-center mt-2 mx-4 mb-2">
+      <div className="d-flex justify-content-center mt-2 mb-2">
         {pokemonTypeValue && loading && <PokemonSpinner />}
       </div>
       <div className="row rows-cols-1 row-cols-md-5 g-3">

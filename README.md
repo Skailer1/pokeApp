@@ -16,7 +16,7 @@ PokeApp is a web application that allows user to know about pokemons either all 
 
 ## Installation
 
-To install and set up Awesome Project locally, follow these steps:
+To install and set up PokeApp locally, follow these steps:
 
 1. Clone the repository:
 https://github.com/Skailer1/pokeApp.git
@@ -67,5 +67,5 @@ If you encounter any issues or have suggestions for improvement, please open an 
 
 ## Acknowledgments
 
-- I would also like to thank my friends and colleagues for their valuable feedback and support.
+- I would like to thank my friends and colleagues for their valuable feedback and support.
 - Special thanks to Terrantic team to light the spark and inspire me to build this project.

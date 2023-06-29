@@ -35,14 +35,14 @@ export const PokeInfoPage = () => {
 
   return (
     <div className='row mt-5'>
-      <div className="col-3">
+      <div className="col-sm-6 col-md-3 col-lg-3">
         <img
           src={pokemon.image}
           className="img-thumbnail animate__animated animate__fadeInLeft"
           alt={pokemon.name}
         />
       </div>
-      <div className="col-3 animate__animated animate__fadeIn">
+      <div className="col-sm-6 col-md-3 col-lg-3 animate__animated animate__fadeIn">
         <h3>{pokemon.name.toUpperCase()} <small>#{pokemon.id}</small> </h3>
 
         <ul className='list-group '>
@@ -50,19 +50,19 @@ export const PokeInfoPage = () => {
           <li className='list-group-item'><b>Weight: </b> {pokemon.weight}</li>
           <li className='list-group-item'><b>Height: </b> {pokemon.height}</li>
         </ul>
-        <h5 className='mt-3'>Abilities</h5>
+        <h5 className='mt-3 ms-2'>Abilities</h5>
         {pokemon.abilitieNames.map((abilities) => (
-          <div key={abilities} className={abilities}>
+          <div key={abilities} className="ms-2">
             <li> {abilities}</li>
           </div>
         ))}
 
       </div>
-      <div className="col-6 mt-4 animate__animated animate__fadeIn">
+      <div className="col-sm-12 col-md-6 col-lg-6  mt-4  animate__animated animate__fadeIn">
         <PokeTable id={pokemon.id} />
 
         <button
-          className='btn btn-outline-primary  mt-4'
+          className='btn btn-outline-primary mb-2  mt-4'
           onClick={onNavigateBack}>
           Back
         </button>

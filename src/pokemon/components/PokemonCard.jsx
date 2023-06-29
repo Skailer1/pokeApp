@@ -13,7 +13,7 @@ const {
   abilitieNames } = pokemon;
 
   return (
-    <div className="col-sm-3 mb-3 mb-sm-3 mx-4">
+    <div className="col-sm-3 mb-3 mb-sm-3  ">
       <div className="card  animate__animated animate__fadeIn ">
       <span >#{id}</span>
         <img
