@@ -3,9 +3,7 @@ import { AuthContext } from './AuthContext';
 import { authReducer } from './authReducer';
 import { types } from '../types/types';
 
-// const initialState ={
-//     logged: false,
-// }
+
 
   const init = () => {
   const user = JSON.parse(localStorage.getItem('user') );

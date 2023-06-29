@@ -13,7 +13,7 @@ export const pokeTypes = [
     },
     {
         'id': 'type3',
-        'option':'Fying', 
+        'option':'Flying', 
         'value':'3', 
        
     },

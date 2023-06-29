@@ -1,17 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import { Table } from 'react-bootstrap'
-import { getDitto } from '../helpers/utils';
+import {  getPokemonById } from '../helpers/utils';
 
 
 
-export const PokeTable = () => {
+export const PokeTable = ({id}) => {
 
-  const [stats, setStats] = useState([]);
   const [pokemon, setPokemon] = useState();
 
   const getPokemon = async () => {
-    const pokeStats = await getDitto();
-    setPokemon(pokeStats);
+    const pokemonStats = await getPokemonById(id);
+    setPokemon(pokemonStats);
   }
 
   useEffect(() => {
@@ -31,7 +30,7 @@ export const PokeTable = () => {
 
             {pokemon?.stats?.map((stat) => (
               <th key={stat?.stat?.name} className={stat.stat.name}>
-                {stat.stat.name}</th>
+                {stat.stat.name.toUpperCase()}</th>
             ))}
           </tr>
         </thead>
