@@ -27,15 +27,13 @@ export const Navbar = () => {
 
             <div className="navbar-collapse">
                 <div className="navbar-nav">
-
-                    <NavLink 
+                <NavLink 
                         className=
                         {({isActive}) => `nav-item nav-link ${isActive ? 'active' : ''}`} 
-                        to="/pokemons"
+                        to="/search"
                     >
-                        Pokemons
+                        Search
                     </NavLink>
-
                     <NavLink 
                         className=
                         {({isActive}) => `nav-item nav-link ${isActive ? 'active' : ''}`} 
@@ -46,9 +44,9 @@ export const Navbar = () => {
                     <NavLink 
                         className=
                         {({isActive}) => `nav-item nav-link ${isActive ? 'active' : ''}`} 
-                        to="/search"
+                        to="/pokemons"
                     >
-                        Search
+                        Pokemons
                     </NavLink>
                 </div>
             </div>

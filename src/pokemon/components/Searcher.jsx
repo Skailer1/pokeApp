@@ -25,20 +25,21 @@ export const Searcher = () => {
   const getPokemon = async () => {
     try {
       if (pokemonId !== '') {
+        setLoading(true);
         const newPokemon = await getPokemonDetails(null, isPokemonByType, pokemonId);
         if (newPokemon.status === 404) {
-          throw new Error();
+          setError('Pokemon not found by');
+        } else {
+          setPokemon(newPokemon);
         }
-        setPokemon(newPokemon);
-        setLoading(false);
       }
     } catch (error) {
       const messageError = 'Pokemon not found by';
-      console.error(messageError, error)
       setError(messageError);
+    } finally {
       setLoading(false);
     }
-  }
+  };
 
   useEffect(() => {
     fetchPokemonOnClick();
@@ -61,16 +62,16 @@ export const Searcher = () => {
   }, [pokemon]);
 
 
-
+  const resetSearch = () => {
+    setPokemon(null);
+    setError('');
+    setLoading(true);
+    getPokemon(pokemonId);
+  };
 
   const fetchPokemonOnClick = () => {
-    getPokemon(pokemonId);
     setLoading(true);
-    if (error) {
-      window.location.reload();
-      setLoading(true);
-
-    }
+    resetSearch();
 
   };
 

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 export const PokemonCard = ({ pokemon }) => {
@@ -12,6 +12,13 @@ const {
   height,
   abilitieNames } = pokemon;
 
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/pokemon-info/${id}`, { state: { pokemon: pokemon } });
+  };
+
+
   return (
     <div className="col-sm-3 mb-3 mb-sm-3  ">
       <div className="card  animate__animated animate__fadeIn ">
@@ -20,6 +27,7 @@ const {
           src={image}
           className="card-img-top"
           alt={name}
+          onClick={handleClick}
         />
         <div className="card-body ">
           

@@ -15,8 +15,8 @@ export const PokeInfoPage = () => {
   // this const pass the stored pokemon if available OR pass the data state retreived from Link (details).
   const pokemon = storedPokemon || data.state?.pokemon;
   const navigate = useNavigate();
-  const savePokemonInfo = () => {localStorage.setItem('pokemonInfo', JSON.stringify(pokemon))}
-  const cleanPokemonInfo = () => {localStorage.removeItem('pokemonInfo')}
+  const savePokemonInfo = () => { localStorage.setItem('pokemonInfo', JSON.stringify(pokemon)) }
+  const cleanPokemonInfo = () => { localStorage.removeItem('pokemonInfo') }
 
   const onNavigateBack = () => {
     navigate(-1);
@@ -58,11 +58,10 @@ export const PokeInfoPage = () => {
         ))}
 
       </div>
-      <div className="col-sm-12 col-md-6 col-lg-6  mt-4  animate__animated animate__fadeIn">
+      <div className="col-sm-12 col-md-6 col-lg-6  mt-4   animate__animated animate__fadeIn">
         <PokeTable id={pokemon.id} />
-
         <button
-          className='btn btn-outline-primary mb-2  mt-4'
+          className='btn btn-outline-primary  mb-2  mt-4'
           onClick={onNavigateBack}>
           Back
         </button>
